@@ -1,0 +1,16 @@
+name: first workflow
+on: push
+jobs:
+  lint_test_build:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Git Checkout
+      uses: actions/checkout@v4
+    - name: Install NodeJS
+      uses: actions/setup-node@v3
+    - name: Install dependancies
+      runs: npm install
+    - name: Run Lint
+      runs: npm run lint
+    - name: Run unit test
+      runs: npm run test 
